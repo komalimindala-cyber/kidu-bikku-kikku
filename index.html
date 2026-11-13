@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Little Surprise For my kikku 💗</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <!-- PASSWORD SCREEN -->
+<div id="passwordScreen" style="position:fixed; top:0; left:0; width:100%; height:100%; background:black; z-index:9999; display:flex; justify-content:center; align-items:center; flex-direction:column; color:white;">
+  <h2>For kidu bikku❤️</h2>
+  <p>Enter Password to Continue</p>
+  <input type="password" id="passwordInput" placeholder="Enter Password" style="padding:10px; border-radius:8px; border:none; margin:10px;"> 
+  <span onclick="togglePass()" id="eyeIcon">👁️</span>
+  <button onclick="checkPassword()" style="padding:8px 20px; border-radius:8px; background:white; border:none; cursor:pointer;">Unlock</button>
+  <p id="wrongMsg" style="color:red; display:none; margin-top:10px;">Wrong Password!</p>
+</div>
+
+<!-- DREAMY BACKGROUND -->
+<div class="dreamy-background" aria-hidden="true">
+    <div class="stars"></div>
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+    <div class="glow glow-three"></div>
+</div>
+
+<div class="hearts" id="hearts" aria-hidden="true"></div>
+
+<main class="page">
+
+    <header class="topline">
+        <span class="tiny-heart">♥</span>
+        <span>MADE WITH LOTS OF LOVE</span>
+        <span class="tiny-heart">♥</span>
+    </header>
+
+    <!-- HOME SECTION -->
+    <section class="hero" id="home">
+
+        <p class="eyebrow">
+            A LITTLE SOMETHING FOR SOMEONE SPECIAL IN MY HEART...
+        </p>
+
+        <h1>
+            Always Keep Smiles<br>
+            <em>My Dear, Kikkuuu</em>
+        </h1>
+
+        <p class="intro">
+            I made a tiny corner of the internet just for you.<br>
+            Ready to see what's inside?
+        </p>
+
+        <button class="primary-btn" id="openSurprise">
+            Click to Begin <span>♡</span>
+        </button>
+
+        <div class="sparkle sparkle-one">✦</div>
+        <div class="sparkle sparkle-two">✧</div>
+
+    </section>
+
+    <!-- SURPRISE SECTION -->
+    <section class="surprise hidden" id="surprise">
+
+        <div class="section-heading">
+            <span class="small-label">JUST FOR YOU</span>
+
+            <h2>You Are My <em>Everything</em></h2>
+
+            <p>Little things that remind me of you.</p>
+        </div>
+
+        <!-- MEMORY CARDS -->
+        <div class="memory-grid">
+
+            <!-- OUR MOMENTS -->
+            <article class="memory-card photo-card"
+                     id="ourMomentsCard"
+                     tabindex="0"
+                     role="button"
+                     aria-label="Open our little moments photos">
+
+                <div class="photo-art art-one">
+                    <span>♡</span>
+                </div>
+
+                <h3>Our Little Moments</h3>
+
+                <p>
+                    The simplest moments become special with you.
+                </p>
+
+                <p class="click-text">
+                    Click to see our memories ♡
+                </p>
+            </article>
+
+            <!-- FAVOURITE FEELING -->
+            <article class="memory-card photo-card">
+
+                <div class="photo-art art-two">
+                    <span>✿</span>
+                </div>
+
+                <h3>My Favourite Feeling</h3>
+
+                <p>
+                    That smile you bring without even trying.
+                </p>
+            </article>
+
+            <!-- ALWAYS FOREVER VIDEO CARD -->
+            <article class="memory-card photo-card"
+                     id="alwaysForeverCard"
+                     tabindex="0"
+                     role="button"
+                     aria-label="Open Always and Forever video">
+
+                <div class="photo-art art-three">
+                    <span>♡</span>
+                </div>
+
+                <h3>Always &amp; Forever</h3>
+
+                <p>
+                    Some people make ordinary days feel magical.
+                </p>
+
+                <p class="click-text">
+                    Click to watch our forever video ♥
+                </p>
+            </article>
+
+        </div>
+
+        <!-- LETTER SECTION -->
+        <div class="letter-wrap">
+
+            <div class="letter-icon">💌</div>
+
+            <p class="small-label">A LETTER FROM MY HEART</p>
+
+            <h2>A Letter <em>For You</em></h2>
+
+            <p class="letter-teaser">
+                There are a few things I have been wanting to tell you...
+            </p>
+
+            <button class="secondary-btn" id="readLetter">
+                Read My Letter
+            </button>
+
+        </div>
+
+        <!-- FINAL SECTION -->
+        <div class="final-note">
+
+            <p>One more thing...</p>
+
+            <h2>
+                You make my world a little <em>brighter.</em>
+            </h2>
+
+            <button class="primary-btn" id="finalSurprise">
+                Surprise Me Again <span>♡</span>
+            </button>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- PHOTO GALLERY -->
+<dialog id="photosDialog" class="photos-dialog">
+
+    <button class="close-btn" id="closePhotos"
+            aria-label="Close photos">×</button>
+
+    <div class="photos-content">
+
+        <p class="small-label">OUR BEAUTIFUL MEMORIES</p>
+
+        <h2>Our Little <em>Moments</em> ♡</h2>
+
+        <p class="photos-subtitle">
+            Every picture holds a beautiful memory with you.
+        </p>
+
+        <div class="gallery">
+
+            <img src="photos/kikku1.jpg" alt="Our memory 1">
+            <img src="photos/kikku2.jpg" alt="Our memory 2">
+            <img src="photos/kikku3.jpg" alt="Our memory 3">
+
+        </div>
+
+        <p class="gallery-footer">
+            Forever grateful for these memories 💗
+        </p>
+
+    </div>
+</dialog>
+
+
+<!-- FULL PAGE LETTER -->
+<dialog id="letterDialog" class="letter-dialog">
+
+    <button class="close-btn" id="closeLetter"
+            aria-label="Close letter">×</button>
+
+    <div class="envelope">💌</div>
+
+    <p class="small-label">MY DEAREST kiduuu</p>
+
+    <h2>My sweet annoying brother,</h2>
+    
+    <p>you are my everything in this world no one can love me like you do.
+        sometimes you are annoying me soo much but i cant imagine without your annoying.
+
+    </p>
+    <p>Sometimes you scold me why i'm like this but i'm like this not now since my childhood im very feared,
+        i cant say no to anyone because its my nature it takes time to change give me sometime to change. 
+     </p>
+     <p>Dont avoid me for this reason i know in this world you are the one loves me without any expectations.
+        and im the one who always gets lots of love from brother and you raised me without letting me experience any pain or hardships.
+        you never let any difficulties come my way.
+     </p>
+     <p>"If someone tells me not to behave a certain way or not to do something, I usually don't listen. But if you tell me, I will listen.
+         Because when others say something, I feel they might be saying it for their own benefit. But when it comes to you, I know you always want what is best for me. So, whatever you say, I take it seriously and think about it.
+        I have realized that even now, I'm not able to make my own decisions or find solutions to my own problems independently.
+        I haven't reached that stage of maturity yet. I still need to change and develop the right mindset. 
+        I know I have a lot to learn and improve about myself."</p>
+
+    <p class="signature">
+        With all my love,
+        <span>kikku... ♡</span>
+    </p>
+
+</dialog>
+
+
+<!-- FULL SCREEN FOREVER VIDEO -->
+<div id="foreverVideoPage"
+     class="forever-video-page"
+     aria-hidden="true">
+
+    <video id="foreverVideo"
+           class="forever-video"
+           playsinline
+           controls
+           preload="metadata">
+
+        <source src="video/kikku.mp4" controls style="width: 100%; height: auto; border-radius:15px;margin:20px;" type="video/mp4">
+
+        Your browser does not support this video.
+    </video>
+
+    <!-- PEACEFUL VIDEO OVERLAY -->
+    <div class="video-overlay"></div>
+
+    <button class="video-close-btn"
+            id="closeForeverVideo"
+            aria-label="Close video">
+        ×
+    </button>
+
+    <div class="video-top-label">
+        A LITTLE MEMORY JUST FOR YOU
+    </div>
+
+    <div class="video-bottom-message">
+
+        <span class="video-heart">♡</span>
+
+        <h1>Always &amp; Forever</h1>
+
+        <p>
+            Some moments become memories.<br>
+            Some memories stay forever in our hearts.
+        </p>
+
+        <h2>Forever Yours ♥</h2>
+
+    </div>
+
+</div>
+
+
+<!-- TOAST -->
+<div class="toast" id="toast" role="status">
+    Sending you a little extra love 💗
+</div>
+
+
+<script src="index.js"></script>
+
+</body>
+</html>
